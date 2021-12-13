@@ -1,6 +1,7 @@
 package com.koreait.basic.board.rank;
 
 import com.koreait.basic.Utils;
+import com.koreait.basic.dao.BoardRankDAO;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,10 +15,11 @@ public class BoardRankServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         String type = req.getParameter("type");
-        String title = "";
+        String title = null;
         switch (type) {
             case "1":
                 title = "조회수 Top 10";
+                req.setAttribute("list", BoardRankDAO.selBoardHitsRankList());
                 break;
         }
         Utils.displayView(title, "board/rank", req, res);

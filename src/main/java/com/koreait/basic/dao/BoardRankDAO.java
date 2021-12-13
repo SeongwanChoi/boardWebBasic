@@ -11,7 +11,7 @@ import java.util.List;
 
 public class BoardRankDAO {
 
-    public static List<BoardVO> selBoardListHitsRankList() {
+    public static List<BoardVO> selBoardHitsRankList() {
         List<BoardVO> list = new ArrayList();
         Connection con = null;
         PreparedStatement ps = null;
