@@ -15,7 +15,7 @@
             <input type="search" name="searchText" value="${param.searchText}">
             <input type="submit" value="검색">
 
-            나타내는 행 수:
+
             <select name="rowCnt">
             <c:forEach var="cnt" begin="5" end="30" step="5">
                 <option value="${cnt}" ${cnt == param.rowCnt ? 'selected' : ''}>${cnt}개</option>
@@ -26,7 +26,7 @@
 </div>
 <c:choose>
     <c:when test="${requestScope.maxPageNum == 0}">
-        <div>글이 없습니다.</div>
+        <div>랭킹이 없습니다.</div>
     </c:when>
     <c:otherwise>
         <div>

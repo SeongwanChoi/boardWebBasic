@@ -1,4 +1,4 @@
-package com.koreait.basic.board.rank;
+package com.koreait.basic.board;
 
 import com.koreait.basic.Utils;
 import com.koreait.basic.dao.BoardRankDAO;

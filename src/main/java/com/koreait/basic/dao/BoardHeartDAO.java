@@ -65,6 +65,7 @@ public class BoardHeartDAO {
             if (rs.next()) {
                 return 1;
             }
+            return 2;
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
