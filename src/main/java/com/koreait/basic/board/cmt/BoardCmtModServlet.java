@@ -15,22 +15,18 @@ import java.io.IOException;
 public class BoardCmtModServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        BoardCmtEntity entity = new BoardCmtEntity();
-
-        entity.setCtnt(req.getParameter("ctnt"));
-        entity.setIcmt(Utils.getParameterInt(req, "icmt"));
         int iboard = Utils.getParameterInt(req, "iboard");
-        entity.setIboard(iboard);
-        entity.setWriter(Utils.getLoginUserPk(req));
+        int icmt = Utils.getParameterInt(req, "icmt");
+        String ctnt = req.getParameter("ctnt");
+        int writer = Utils.getLoginUserPk(req);
 
-        int result = BoardCmtDAO.updBoardCmt(entity);
+        BoardCmtEntity param = new BoardCmtEntity();
+        param.setIcmt(icmt);
+        param.setCtnt(ctnt);
+        param.setWriter(writer);
 
-        switch (result) {
-            case 1:
-                res.sendRedirect("/board/detail?iboard=" + iboard);
-                break;
-            default:
-                break;
-        }
+        int result = BoardCmtDAO.updBoardCmt(param);
+
+        res.sendRedirect("/board/detail?nohits=1&iboard=" + iboard);
     }
 }

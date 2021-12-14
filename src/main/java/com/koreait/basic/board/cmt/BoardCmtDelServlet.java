@@ -25,6 +25,6 @@ public class BoardCmtDelServlet extends HttpServlet {
 
         int result = BoardCmtDAO.delBoardCmt(param);
 
-        res.sendRedirect("/board/detail?iboard=" + iboard);
+        res.sendRedirect("/board/detail?nohits=1&iboard=" + iboard);
     }
 }
