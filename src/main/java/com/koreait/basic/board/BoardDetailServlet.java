@@ -33,12 +33,13 @@ public class BoardDetailServlet extends HttpServlet {
         req.setAttribute("cmtList", BoardCmtDAO.selBoardCmtList(cmtParam));
 
         int loginUserPk = Utils.getLoginUserPk(req);
-        if(loginUserPk > 0) {
-            BoardHeartEntity hbEntity = new BoardHeartEntity();
-            hbEntity.setIuser(loginUserPk);
-            hbEntity.setIboard(iboard);
-            req.setAttribute("isHeart", BoardHeartDAO.selIsHeart(hbEntity));
+        if (loginUserPk > 0) {
+            BoardHeartEntity entity = new BoardHeartEntity();
+            entity.setIuser(loginUserPk);
+            entity.setIboard(iboard);
+            req.setAttribute("isHeart", BoardHeartDAO.selIsHeart(entity));
         }
+
         if(data.getWriter() != loginUserPk && nohits != 1) { //로그인 안 되어 있으면 0, 로그인 되어 있으면 pk값
             BoardDAO.updBoardHitUp(param);
         }
