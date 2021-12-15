@@ -2,8 +2,8 @@
 <div class="wrap">
     <div>
         <form action="/user/login" method="post" id="frm">
-            <div><input type="text" name="uid" placeholder="id" value="admin"></div>
-            <div><input type="password" name="upw" placeholder="password" value="test1234"></div>
+            <div><input type="text" name="uid" placeholder="id" value="microform"></div>
+            <div><input type="password" name="upw" placeholder="password" value="121212"></div>
             <div><input type="submit" value="login"></div>
         </form>
         <div>
