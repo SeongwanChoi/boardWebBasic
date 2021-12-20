@@ -23,11 +23,11 @@ public class BoardRankServlet extends HttpServlet {
                 break;
             case "2":
                 title = "댓글수 Top 10";
-                req.setAttribute("list", BoardRankDAO.selBoardCmtRankList());
+                req.setAttribute("list", BoardRankDAO.selBoardHitsRankList());
                 break;
             case "3":
                 title = "좋아요 Top 10";
-                req.setAttribute("list", BoardRankDAO.selBoardHeartRankList());
+                req.setAttribute("list", BoardRankDAO.selBoardHitsRankList());
                 break;
         }
         Utils.displayView(title, "board/rank", req, res);
