@@ -44,7 +44,7 @@ public class BoardCmtDAO {
                     " INNER JOIN t_user B " +
                     " ON A.writer = B.iuser " +
                     " WHERE A.iboard = ? " +
-                    " ORDER BY A.icmt ASC ";
+                    " ORDER BY A.icmt DESC ";
         try {
             con = DbUtils.getCon();
             ps = con.prepareStatement(sql);

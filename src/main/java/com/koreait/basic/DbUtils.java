@@ -4,9 +4,9 @@ import java.sql.*;
 
 public class DbUtils {
     public static Connection getCon() throws Exception {
-        final String URL = "jdbc:mysql://localhost:3306/boardbasic";
-        final String USER_NAME = "korea";
-        final String PASSWORD = "zhfldk";
+        final String URL = "jdbc:mysql://localhost:3308/boardbasic";
+        final String USER_NAME = "root";
+        final String PASSWORD = "koreait";
         final String DRIVER = "com.mysql.cj.jdbc.Driver";
         Class.forName(DRIVER);
         Connection con = DriverManager.getConnection(URL, USER_NAME, PASSWORD);
